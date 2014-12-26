@@ -1,0 +1,20 @@
+<ion-view title="Companies">
+    <ion-content no-scroll>
+        <swipe-cards>
+            <swipe-card ng-repeat="company in companies" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwiped($index)" on-swipe-right="cardSwiped($index)">
+                <div class="front">
+                    <div class="title">
+                        {{company.name}}
+                    </div>
+                    <div class="image">
+                        <img ng-src="{{company.image}}" width="150" height="150">
+                    </div>
+                    <div class="button-bar">
+                        <button class="button ion-checkmark-circled" ng-click="goAway()"></button>
+                        <button class="button ion-close-circled" ng-click="goAway()"></button>
+                    </div>
+                </div>
+            </swipe-card>
+        </swipe-cards>
+    </ion-content>
+</ion-view>

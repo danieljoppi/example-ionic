@@ -1,0 +1,54 @@
+<ion-view title="Account">
+  <ion-content class="padding">
+    <h1>Account</h1>
+      <form ng-submit="submit()" class="list">
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">First Name</span>
+              <input type="text" ng-model="user.name">
+          </label>
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Last Name</span>
+              <input type="text" ng-model="user.lastName">
+          </label>
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Email</span>
+              <input type="text" ng-model="user.email" placeholder="user@email.com">
+          </label>
+          <label class="item item-input item-select">
+              <div class="input-label">
+                  Location
+              </div>
+              <select ng-model="user.location" ng-options="location.name for location in locations">
+                  <option>--- choose ---</option>
+              </select>
+          </label>
+          <label class="item item-input">
+              <span class="input-label">Location Range</span>
+              <div class="range">
+                  <i class="ion-ios7-location-outline"></i>
+                  <input type="range" name="volume" ng-model="user.locationRange">
+                  <span>{{user.locationRange}}</span>
+              </div>
+          </label>
+          <label class="item item-toggle">
+              Facebook connect
+              <label class="toggle toggle-positive">
+                  <input type="checkbox" ng-model="user.facebookConnect">
+                  <div class="track">
+                      <div class="handle"></div>
+                  </div>
+              </label>
+          </label>
+          <label class="item item-toggle">
+              LinkedIn connect
+              <label class="toggle toggle-calm">
+                  <input type="checkbox" ng-model="user.linkedinConnect">
+                  <div class="track">
+                      <div class="handle"></div>
+                  </div>
+              </label>
+          </label>
+          <input type="submit" class="button button-block button-positive activated" value="Save">
+      </form>
+  </ion-content>
+</ion-view>
